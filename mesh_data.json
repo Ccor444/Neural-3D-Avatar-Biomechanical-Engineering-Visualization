@@ -1,0 +1,657 @@
+{
+  "metadata": {
+    "name": "Female Avatar Neural 3D - High Precision Mesh",
+    "version": "2.0.0",
+    "description": "Advanced anatomical wireframe model with biomechanical constraints",
+    "author": "Neural Systems Lab",
+    "created": "2024-01-15",
+    "updated": "2024-01-20",
+    "scale": 1.0,
+    "units": "normalized",
+    "boundingBox": {
+      "min": [-35, -100, -10],
+      "max": [35, 100, 10],
+      "center": [0, 0, 0]
+    },
+    "biomechanical": {
+      "jointConstraints": true,
+      "inverseKinematics": true,
+      "muscleSprings": true,
+      "physicsEnabled": true,
+      "collisionDetection": true,
+      "rangeOfMotion": true
+    }
+  },
+  
+  "materials": {
+    "wireframe": {
+      "color": "#2ea3ff",
+      "opacity": 0.8,
+      "glow": true,
+      "thickness": 1.5,
+      "shader": "glow_3d"
+    },
+    "joints": {
+      "color": "#00ffff",
+      "size": 3.0,
+      "glowIntensity": 0.6,
+      "shader": "holographic"
+    },
+    "skeleton": {
+      "color": "#ffaa00",
+      "thickness": 2.0,
+      "shader": "neon_tube"
+    },
+    "surface": {
+      "color": "#4ecdc4",
+      "opacity": 0.3,
+      "shininess": 100
+    }
+  },
+  
+  "colorMappings": {
+    "biomechanical": {
+      "head": "#2ea3ff",
+      "neck": "#2ea3ff",
+      "shoulder": "#ff6b6b",
+      "chest": "#4ecdc4",
+      "back": "#45b7d1",
+      "waist": "#96ceb4",
+      "hip": "#feca57",
+      "arm": "#ff9ff3",
+      "hand": "#54a0ff",
+      "leg": "#5f27cd",
+      "foot": "#00d2d3",
+      "default": "#ffffff"
+    },
+    "thermal": {
+      "min": "#0000ff",
+      "max": "#ff0000",
+      "mid": "#00ff00"
+    }
+  },
+  
+  "vertices": [
+    {"id": "head_top", "x": 0, "y": -72, "z": 0, "group": "head", "type": "joint", "weight": 0.8, "fixed": true},
+    {"id": "head_front_center", "x": 0, "y": -65, "z": 8, "group": "head", "type": "surface", "weight": 0.6},
+    {"id": "head_front_left", "x": -6, "y": -65, "z": 6, "group": "head", "type": "surface", "weight": 0.6},
+    {"id": "head_front_right", "x": 6, "y": -65, "z": 6, "group": "head", "type": "surface", "weight": 0.6},
+    
+    {"id": "head_left_eye", "x": -4, "y": -62, "z": 7, "group": "head", "type": "feature", "weight": 0.4},
+    {"id": "head_right_eye", "x": 4, "y": -62, "z": 7, "group": "head", "type": "feature", "weight": 0.4},
+    {"id": "head_nose", "x": 0, "y": -58, "z": 8, "group": "head", "type": "feature", "weight": 0.3},
+    
+    {"id": "head_left_cheek", "x": -5, "y": -56, "z": 6, "group": "head", "type": "surface", "weight": 0.5},
+    {"id": "head_right_cheek", "x": 5, "y": -56, "z": 6, "group": "head", "type": "surface", "weight": 0.5},
+    
+    {"id": "head_mouth", "x": 0, "y": -52, "z": 7, "group": "head", "type": "feature", "weight": 0.3},
+    {"id": "head_chin", "x": 0, "y": -48, "z": 5, "group": "head", "type": "joint", "weight": 0.6, "fixed": true},
+    
+    {"id": "head_left_temple", "x": -8, "y": -62, "z": 2, "group": "head", "type": "surface", "weight": 0.6},
+    {"id": "head_right_temple", "x": 8, "y": -62, "z": 2, "group": "head", "type": "surface", "weight": 0.6},
+    
+    {"id": "head_left_ear", "x": -9, "y": -58, "z": 0, "group": "head", "type": "feature", "weight": 0.4},
+    {"id": "head_right_ear", "x": 9, "y": -58, "z": 0, "group": "head", "type": "feature", "weight": 0.4},
+    
+    {"id": "head_back_top", "x": 0, "y": -65, "z": -6, "group": "head", "type": "surface", "weight": 0.7},
+    {"id": "head_back_left", "x": -7, "y": -60, "z": -5, "group": "head", "type": "surface", "weight": 0.6},
+    {"id": "head_back_right", "x": 7, "y": -60, "z": -5, "group": "head", "type": "surface", "weight": 0.6},
+    {"id": "head_back_bottom", "x": 0, "y": -50, "z": -7, "group": "head", "type": "joint", "weight": 0.7, "fixed": true},
+    
+    {"id": "head_left_contour_1", "x": -8, "y": -68, "z": 2, "group": "head", "type": "contour", "weight": 0.5},
+    {"id": "head_left_contour_2", "x": -7, "y": -55, "z": 1, "group": "head", "type": "contour", "weight": 0.5},
+    {"id": "head_right_contour_1", "x": 8, "y": -68, "z": 2, "group": "head", "type": "contour", "weight": 0.5},
+    {"id": "head_right_contour_2", "x": 7, "y": -55, "z": 1, "group": "head", "type": "contour", "weight": 0.5},
+    
+    {"id": "neck_top_center", "x": 0, "y": -46, "z": 0, "group": "neck", "type": "joint", "weight": 1.0, "fixed": true},
+    {"id": "neck_top_left", "x": -3, "y": -46, "z": 0, "group": "neck", "type": "surface", "weight": 0.8},
+    {"id": "neck_top_right", "x": 3, "y": -46, "z": 0, "group": "neck", "type": "surface", "weight": 0.8},
+    {"id": "neck_top_front", "x": 0, "y": -46, "z": 2, "group": "neck", "type": "surface", "weight": 0.7},
+    {"id": "neck_top_back", "x": 0, "y": -46, "z": -2, "group": "neck", "type": "surface", "weight": 0.7},
+    
+    {"id": "neck_base_center", "x": 0, "y": -40, "z": 0, "group": "neck", "type": "joint", "weight": 1.0, "fixed": true},
+    {"id": "neck_base_left", "x": -4, "y": -40, "z": 0, "group": "neck", "type": "surface", "weight": 0.8},
+    {"id": "neck_base_right", "x": 4, "y": -40, "z": 0, "group": "neck", "type": "surface", "weight": 0.8},
+    {"id": "neck_base_front", "x": 0, "y": -40, "z": 2, "group": "neck", "type": "surface", "weight": 0.7},
+    
+    {"id": "shoulder_left_top", "x": -15, "y": -38, "z": 0, "group": "shoulder_left", "type": "joint", "weight": 1.2, "fixed": true},
+    {"id": "shoulder_left_front", "x": -15, "y": -38, "z": 3, "group": "shoulder_left", "type": "surface", "weight": 0.9},
+    {"id": "shoulder_left_back", "x": -15, "y": -38, "z": -2, "group": "shoulder_left", "type": "surface", "weight": 0.9},
+    {"id": "shoulder_left_side", "x": -18, "y": -36, "z": 0, "group": "shoulder_left", "type": "contour", "weight": 0.8},
+    
+    {"id": "shoulder_right_top", "x": 15, "y": -38, "z": 0, "group": "shoulder_right", "type": "joint", "weight": 1.2, "fixed": true},
+    {"id": "shoulder_right_front", "x": 15, "y": -38, "z": 3, "group": "shoulder_right", "type": "surface", "weight": 0.9},
+    {"id": "shoulder_right_back", "x": 15, "y": -38, "z": -2, "group": "shoulder_right", "type": "surface", "weight": 0.9},
+    {"id": "shoulder_right_side", "x": 18, "y": -36, "z": 0, "group": "shoulder_right", "type": "contour", "weight": 0.8},
+    
+    {"id": "clavicle_left", "x": -8, "y": -38, "z": 0, "group": "clavicle", "type": "joint", "weight": 0.7, "fixed": true},
+    {"id": "clavicle_center", "x": 0, "y": -36, "z": 0, "group": "clavicle", "type": "joint", "weight": 0.6, "fixed": true},
+    {"id": "clavicle_right", "x": 8, "y": -38, "z": 0, "group": "clavicle", "type": "joint", "weight": 0.7, "fixed": true},
+    
+    {"id": "chest_upper_left", "x": -12, "y": -32, "z": 2, "group": "chest", "type": "surface", "weight": 1.0},
+    {"id": "chest_upper_right", "x": 12, "y": -32, "z": 2, "group": "chest", "type": "surface", "weight": 1.0},
+    {"id": "chest_upper_center", "x": 0, "y": -30, "z": 4, "group": "chest", "type": "surface", "weight": 0.8},
+    
+    {"id": "chest_mid_left", "x": -11, "y": -22, "z": 3, "group": "chest", "type": "surface", "weight": 1.1},
+    {"id": "chest_mid_right", "x": 11, "y": -22, "z": 3, "group": "chest", "type": "surface", "weight": 1.1},
+    {"id": "chest_mid_center", "x": 0, "y": -20, "z": 5, "group": "chest", "type": "surface", "weight": 0.9},
+    
+    {"id": "chest_lower_left", "x": -10, "y": -12, "z": 2, "group": "chest", "type": "surface", "weight": 1.0},
+    {"id": "chest_lower_right", "x": 10, "y": -12, "z": 2, "group": "chest", "type": "surface", "weight": 1.0},
+    {"id": "chest_lower_center", "x": 0, "y": -10, "z": 3, "group": "chest", "type": "surface", "weight": 0.8},
+    
+    {"id": "chest_side_left_upper", "x": -14, "y": -30, "z": 0, "group": "chest", "type": "contour", "weight": 0.9},
+    {"id": "chest_side_left_mid", "x": -13, "y": -20, "z": 0, "group": "chest", "type": "contour", "weight": 0.9},
+    {"id": "chest_side_left_lower", "x": -12, "y": -10, "z": 0, "group": "chest", "type": "contour", "weight": 0.9},
+    
+    {"id": "chest_side_right_upper", "x": 14, "y": -30, "z": 0, "group": "chest", "type": "contour", "weight": 0.9},
+    {"id": "chest_side_right_mid", "x": 13, "y": -20, "z": 0, "group": "chest", "type": "contour", "weight": 0.9},
+    {"id": "chest_side_right_lower", "x": 12, "y": -10, "z": 0, "group": "chest", "type": "contour", "weight": 0.9},
+    
+    {"id": "back_upper_left", "x": -10, "y": -32, "z": -3, "group": "back", "type": "surface", "weight": 1.0},
+    {"id": "back_upper_right", "x": 10, "y": -32, "z": -3, "group": "back", "type": "surface", "weight": 1.0},
+    {"id": "back_mid_left", "x": -9, "y": -22, "z": -4, "group": "back", "type": "surface", "weight": 1.1},
+    {"id": "back_mid_right", "x": 9, "y": -22, "z": -4, "group": "back", "type": "surface", "weight": 1.1},
+    {"id": "back_lower_left", "x": -8, "y": -12, "z": -3, "group": "back", "type": "surface", "weight": 1.0},
+    {"id": "back_lower_right", "x": 8, "y": -12, "z": -3, "group": "back", "type": "surface", "weight": 1.0},
+    {"id": "spine_center", "x": 0, "y": -15, "z": -5, "group": "back", "type": "joint", "weight": 1.2, "fixed": true},
+    
+    {"id": "waist_left", "x": -9, "y": -2, "z": 0, "group": "waist", "type": "joint", "weight": 1.0, "fixed": true},
+    {"id": "waist_right", "x": 9, "y": -2, "z": 0, "group": "waist", "type": "joint", "weight": 1.0, "fixed": true},
+    {"id": "waist_front_left", "x": -8, "y": -2, "z": 3, "group": "waist", "type": "surface", "weight": 0.9},
+    {"id": "waist_front_right", "x": 8, "y": -2, "z": 3, "group": "waist", "type": "surface", "weight": 0.9},
+    {"id": "waist_back_left", "x": -8, "y": -2, "z": -2, "group": "waist", "type": "surface", "weight": 0.9},
+    {"id": "waist_back_right", "x": 8, "y": -2, "z": -2, "group": "waist", "type": "surface", "weight": 0.9},
+    {"id": "waist_center_front", "x": 0, "y": 0, "z": 4, "group": "waist", "type": "surface", "weight": 0.8},
+    {"id": "waist_center_back", "x": 0, "y": 0, "z": -3, "group": "waist", "type": "surface", "weight": 0.8},
+    
+    {"id": "hip_left", "x": -11, "y": 10, "z": 0, "group": "hip_left", "type": "joint", "weight": 1.3, "fixed": true},
+    {"id": "hip_right", "x": 11, "y": 10, "z": 0, "group": "hip_right", "type": "joint", "weight": 1.3, "fixed": true},
+    {"id": "hip_left_front", "x": -10, "y": 10, "z": 4, "group": "hip_left", "type": "surface", "weight": 1.1},
+    {"id": "hip_right_front", "x": 10, "y": 10, "z": 4, "group": "hip_right", "type": "surface", "weight": 1.1},
+    {"id": "hip_left_back", "x": -10, "y": 10, "z": -3, "group": "hip_left", "type": "surface", "weight": 1.1},
+    {"id": "hip_right_back", "x": 10, "y": 10, "z": -3, "group": "hip_right", "type": "surface", "weight": 1.1},
+    {"id": "hip_center_front", "x": 0, "y": 12, "z": 5, "group": "hips", "type": "surface", "weight": 0.9},
+    {"id": "hip_center_back", "x": 0, "y": 12, "z": -4, "group": "hips", "type": "surface", "weight": 0.9},
+    
+    {"id": "arm_right_shoulder", "x": 15, "y": -36, "z": 0, "group": "arm_right", "type": "joint", "weight": 1.2, "fixed": true},
+    {"id": "arm_right_upper_1", "x": 23, "y": -33, "z": 0, "group": "arm_right", "type": "surface", "weight": 1.0},
+    {"id": "arm_right_upper_2", "x": 28, "y": -26, "z": 0, "group": "arm_right", "type": "surface", "weight": 1.0},
+    {"id": "arm_right_upper_3", "x": 31, "y": -16, "z": 0, "group": "arm_right", "type": "surface", "weight": 1.0},
+    {"id": "arm_right_elbow", "x": 33, "y": -10, "z": 0, "group": "arm_right", "type": "joint", "weight": 1.1, "fixed": true},
+    {"id": "arm_right_lower_1", "x": 34, "y": 0, "z": 0, "group": "arm_right", "type": "surface", "weight": 0.9},
+    {"id": "arm_right_lower_2", "x": 34, "y": 10, "z": 0, "group": "arm_right", "type": "surface", "weight": 0.9},
+    {"id": "arm_right_wrist", "x": 34, "y": 20, "z": 0, "group": "arm_right", "type": "joint", "weight": 0.8, "fixed": true},
+    
+    {"id": "hand_right_palm", "x": 34, "y": 26, "z": 0, "group": "hand_right", "type": "joint", "weight": 0.7, "fixed": true},
+    {"id": "hand_right_thumb", "x": 36, "y": 24, "z": -1, "group": "hand_right", "type": "feature", "weight": 0.5},
+    {"id": "hand_right_index", "x": 35, "y": 28, "z": -1, "group": "hand_right", "type": "feature", "weight": 0.4},
+    {"id": "hand_right_middle", "x": 34, "y": 29, "z": 0, "group": "hand_right", "type": "feature", "weight": 0.4},
+    {"id": "hand_right_ring", "x": 33, "y": 28, "z": 1, "group": "hand_right", "type": "feature", "weight": 0.4},
+    {"id": "hand_right_pinky", "x": 32, "y": 26, "z": 1, "group": "hand_right", "type": "feature", "weight": 0.4},
+    
+    {"id": "arm_left_shoulder", "x": -15, "y": -36, "z": 0, "group": "arm_left", "type": "joint", "weight": 1.2, "fixed": true},
+    {"id": "arm_left_upper_1", "x": -23, "y": -33, "z": 0, "group": "arm_left", "type": "surface", "weight": 1.0},
+    {"id": "arm_left_upper_2", "x": -28, "y": -26, "z": 0, "group": "arm_left", "type": "surface", "weight": 1.0},
+    {"id": "arm_left_upper_3", "x": -31, "y": -16, "z": 0, "group": "arm_left", "type": "surface", "weight": 1.0},
+    {"id": "arm_left_elbow", "x": -33, "y": -10, "z": 0, "group": "arm_left", "type": "joint", "weight": 1.1, "fixed": true},
+    {"id": "arm_left_lower_1", "x": -34, "y": 0, "z": 0, "group": "arm_left", "type": "surface", "weight": 0.9},
+    {"id": "arm_left_lower_2", "x": -34, "y": 10, "z": 0, "group": "arm_left", "type": "surface", "weight": 0.9},
+    {"id": "arm_left_wrist", "x": -34, "y": 20, "z": 0, "group": "arm_left", "type": "joint", "weight": 0.8, "fixed": true},
+    
+    {"id": "hand_left_palm", "x": -34, "y": 26, "z": 0, "group": "hand_left", "type": "joint", "weight": 0.7, "fixed": true},
+    {"id": "hand_left_thumb", "x": -36, "y": 24, "z": 1, "group": "hand_left", "type": "feature", "weight": 0.5},
+    {"id": "hand_left_index", "x": -35, "y": 28, "z": 1, "group": "hand_left", "type": "feature", "weight": 0.4},
+    {"id": "hand_left_middle", "x": -34, "y": 29, "z": 0, "group": "hand_left", "type": "feature", "weight": 0.4},
+    {"id": "hand_left_ring", "x": -33, "y": 28, "z": -1, "group": "hand_left", "type": "feature", "weight": 0.4},
+    {"id": "hand_left_pinky", "x": -32, "y": 26, "z": -1, "group": "hand_left", "type": "feature", "weight": 0.4},
+    
+    {"id": "leg_right_hip", "x": 11, "y": 12, "z": 0, "group": "leg_right", "type": "joint", "weight": 1.4, "fixed": true},
+    {"id": "leg_right_upper_1", "x": 11, "y": 24, "z": 1, "group": "leg_right", "type": "surface", "weight": 1.2},
+    {"id": "leg_right_upper_2", "x": 11, "y": 38, "z": 2, "group": "leg_right", "type": "surface", "weight": 1.2},
+    {"id": "leg_right_upper_3", "x": 11, "y": 50, "z": 2, "group": "leg_right", "type": "surface", "weight": 1.2},
+    {"id": "leg_right_knee", "x": 11, "y": 60, "z": 2, "group": "leg_right", "type": "joint", "weight": 1.3, "fixed": true},
+    {"id": "leg_right_lower_1", "x": 11, "y": 70, "z": 2, "group": "leg_right", "type": "surface", "weight": 1.1},
+    {"id": "leg_right_lower_2", "x": 11, "y": 80, "z": 2, "group": "leg_right", "type": "surface", "weight": 1.1},
+    {"id": "leg_right_ankle", "x": 11, "y": 88, "z": 2, "group": "leg_right", "type": "joint", "weight": 1.0, "fixed": true},
+    
+    {"id": "foot_right_heel", "x": 11, "y": 96, "z": 0, "group": "foot_right", "type": "joint", "weight": 0.8, "fixed": true},
+    {"id": "foot_right_toe", "x": 13, "y": 94, "z": 4, "group": "foot_right", "type": "feature", "weight": 0.6},
+    {"id": "foot_right_arch", "x": 9, "y": 92, "z": 2, "group": "foot_right", "type": "surface", "weight": 0.7},
+    {"id": "foot_right_ball", "x": 12, "y": 94, "z": 3, "group": "foot_right", "type": "surface", "weight": 0.7},
+    
+    {"id": "leg_left_hip", "x": -11, "y": 12, "z": 0, "group": "leg_left", "type": "joint", "weight": 1.4, "fixed": true},
+    {"id": "leg_left_upper_1", "x": -11, "y": 24, "z": 1, "group": "leg_left", "type": "surface", "weight": 1.2},
+    {"id": "leg_left_upper_2", "x": -11, "y": 38, "z": 2, "group": "leg_left", "type": "surface", "weight": 1.2},
+    {"id": "leg_left_upper_3", "x": -11, "y": 50, "z": 2, "group": "leg_left", "type": "surface", "weight": 1.2},
+    {"id": "leg_left_knee", "x": -11, "y": 60, "z": 2, "group": "leg_left", "type": "joint", "weight": 1.3, "fixed": true},
+    {"id": "leg_left_lower_1", "x": -11, "y": 70, "z": 2, "group": "leg_left", "type": "surface", "weight": 1.1},
+    {"id": "leg_left_lower_2", "x": -11, "y": 80, "z": 2, "group": "leg_left", "type": "surface", "weight": 1.1},
+    {"id": "leg_left_ankle", "x": -11, "y": 88, "z": 2, "group": "leg_left", "type": "joint", "weight": 1.0, "fixed": true},
+    
+    {"id": "foot_left_heel", "x": -11, "y": 96, "z": 0, "group": "foot_left", "type": "joint", "weight": 0.8, "fixed": true},
+    {"id": "foot_left_toe", "x": -13, "y": 94, "z": 4, "group": "foot_left", "type": "feature", "weight": 0.6},
+    {"id": "foot_left_arch", "x": -9, "y": 92, "z": 2, "group": "foot_left", "type": "surface", "weight": 0.7},
+    {"id": "foot_left_ball", "x": -12, "y": 94, "z": 3, "group": "foot_left", "type": "surface", "weight": 0.7}
+  ],
+  
+  "edges": [
+    ["head_top", "head_front_center"],
+    ["head_top", "head_left_temple"],
+    ["head_top", "head_right_temple"],
+    ["head_top", "head_back_top"],
+    
+    ["head_front_center", "head_front_left"],
+    ["head_front_center", "head_front_right"],
+    ["head_front_left", "head_left_eye"],
+    ["head_front_right", "head_right_eye"],
+    
+    ["head_left_eye", "head_left_cheek"],
+    ["head_right_eye", "head_right_cheek"],
+    ["head_left_eye", "head_nose"],
+    ["head_right_eye", "head_nose"],
+    
+    ["head_nose", "head_mouth"],
+    ["head_mouth", "head_chin"],
+    
+    ["head_left_temple", "head_left_ear"],
+    ["head_left_ear", "head_left_cheek"],
+    ["head_right_temple", "head_right_ear"],
+    ["head_right_ear", "head_right_cheek"],
+    
+    ["head_back_top", "head_back_left"],
+    ["head_back_top", "head_back_right"],
+    ["head_back_left", "head_back_bottom"],
+    ["head_back_right", "head_back_bottom"],
+    
+    ["head_left_contour_1", "head_left_contour_2"],
+    ["head_right_contour_1", "head_right_contour_2"],
+    
+    ["head_back_bottom", "neck_top_center"],
+    ["head_chin", "neck_top_front"],
+    
+    ["neck_top_center", "neck_top_left"],
+    ["neck_top_center", "neck_top_right"],
+    ["neck_top_center", "neck_top_front"],
+    ["neck_top_center", "neck_top_back"],
+    ["neck_top_left", "neck_top_front"],
+    ["neck_top_right", "neck_top_front"],
+    ["neck_top_left", "neck_top_back"],
+    ["neck_top_right", "neck_top_back"],
+    
+    ["neck_top_center", "neck_base_center"],
+    ["neck_top_left", "neck_base_left"],
+    ["neck_top_right", "neck_base_right"],
+    ["neck_top_front", "neck_base_front"],
+    
+    ["neck_base_center", "neck_base_left"],
+    ["neck_base_center", "neck_base_right"],
+    ["neck_base_center", "neck_base_front"],
+    
+    ["neck_base_left", "clavicle_left"],
+    ["neck_base_right", "clavicle_right"],
+    ["clavicle_left", "clavicle_center"],
+    ["clavicle_right", "clavicle_center"],
+    
+    ["clavicle_left", "shoulder_left_top"],
+    ["clavicle_right", "shoulder_right_top"],
+    
+    ["shoulder_left_top", "shoulder_left_front"],
+    ["shoulder_left_top", "shoulder_left_back"],
+    ["shoulder_left_top", "shoulder_left_side"],
+    
+    ["shoulder_right_top", "shoulder_right_front"],
+    ["shoulder_right_top", "shoulder_right_back"],
+    ["shoulder_right_top", "shoulder_right_side"],
+    
+    ["chest_upper_left", "chest_mid_left"],
+    ["chest_mid_left", "chest_lower_left"],
+    ["chest_upper_right", "chest_mid_right"],
+    ["chest_mid_right", "chest_lower_right"],
+    ["chest_upper_center", "chest_mid_center"],
+    ["chest_mid_center", "chest_lower_center"],
+    
+    ["chest_upper_left", "chest_upper_center"],
+    ["chest_upper_center", "chest_upper_right"],
+    ["chest_mid_left", "chest_mid_center"],
+    ["chest_mid_center", "chest_mid_right"],
+    ["chest_lower_left", "chest_lower_center"],
+    ["chest_lower_center", "chest_lower_right"],
+    
+    ["chest_side_left_upper", "chest_side_left_mid"],
+    ["chest_side_left_mid", "chest_side_left_lower"],
+    ["chest_side_right_upper", "chest_side_right_mid"],
+    ["chest_side_right_mid", "chest_side_right_lower"],
+    
+    ["chest_upper_left", "back_upper_left"],
+    ["chest_upper_right", "back_upper_right"],
+    ["chest_mid_left", "back_mid_left"],
+    ["chest_mid_right", "back_mid_right"],
+    ["chest_lower_left", "back_lower_left"],
+    ["chest_lower_right", "back_lower_right"],
+    
+    ["back_upper_left", "spine_center"],
+    ["back_upper_right", "spine_center"],
+    ["back_mid_left", "spine_center"],
+    ["back_mid_right", "spine_center"],
+    ["back_lower_left", "spine_center"],
+    ["back_lower_right", "spine_center"],
+    
+    ["chest_lower_left", "waist_left"],
+    ["chest_lower_right", "waist_right"],
+    ["back_lower_left", "waist_back_left"],
+    ["back_lower_right", "waist_back_right"],
+    
+    ["waist_left", "waist_front_left"],
+    ["waist_front_left", "waist_center_front"],
+    ["waist_center_front", "waist_front_right"],
+    ["waist_front_right", "waist_right"],
+    ["waist_left", "waist_back_left"],
+    ["waist_back_left", "waist_center_back"],
+    ["waist_center_back", "waist_back_right"],
+    ["waist_back_right", "waist_right"],
+    
+    ["waist_left", "hip_left"],
+    ["waist_right", "hip_right"],
+    
+    ["hip_left", "hip_left_front"],
+    ["hip_left_front", "hip_center_front"],
+    ["hip_center_front", "hip_right_front"],
+    ["hip_right_front", "hip_right"],
+    ["hip_left", "hip_left_back"],
+    ["hip_left_back", "hip_center_back"],
+    ["hip_center_back", "hip_right_back"],
+    ["hip_right_back", "hip_right"],
+    
+    ["shoulder_right_top", "arm_right_shoulder"],
+    ["arm_right_shoulder", "arm_right_upper_1"],
+    ["arm_right_upper_1", "arm_right_upper_2"],
+    ["arm_right_upper_2", "arm_right_upper_3"],
+    ["arm_right_upper_3", "arm_right_elbow"],
+    
+    ["arm_right_elbow", "arm_right_lower_1"],
+    ["arm_right_lower_1", "arm_right_lower_2"],
+    ["arm_right_lower_2", "arm_right_wrist"],
+    
+    ["arm_right_wrist", "hand_right_palm"],
+    ["hand_right_palm", "hand_right_thumb"],
+    ["hand_right_palm", "hand_right_index"],
+    ["hand_right_palm", "hand_right_middle"],
+    ["hand_right_palm", "hand_right_ring"],
+    ["hand_right_palm", "hand_right_pinky"],
+    
+    ["hand_right_thumb", "hand_right_index"],
+    ["hand_right_index", "hand_right_middle"],
+    ["hand_right_middle", "hand_right_ring"],
+    ["hand_right_ring", "hand_right_pinky"],
+    
+    ["shoulder_left_top", "arm_left_shoulder"],
+    ["arm_left_shoulder", "arm_left_upper_1"],
+    ["arm_left_upper_1", "arm_left_upper_2"],
+    ["arm_left_upper_2", "arm_left_upper_3"],
+    ["arm_left_upper_3", "arm_left_elbow"],
+    
+    ["arm_left_elbow", "arm_left_lower_1"],
+    ["arm_left_lower_1", "arm_left_lower_2"],
+    ["arm_left_lower_2", "arm_left_wrist"],
+    
+    ["arm_left_wrist", "hand_left_palm"],
+    ["hand_left_palm", "hand_left_thumb"],
+    ["hand_left_palm", "hand_left_index"],
+    ["hand_left_palm", "hand_left_middle"],
+    ["hand_left_palm", "hand_left_ring"],
+    ["hand_left_palm", "hand_left_pinky"],
+    
+    ["hand_left_thumb", "hand_left_index"],
+    ["hand_left_index", "hand_left_middle"],
+    ["hand_left_middle", "hand_left_ring"],
+    ["hand_left_ring", "hand_left_pinky"],
+    
+    ["hip_right", "leg_right_hip"],
+    ["leg_right_hip", "leg_right_upper_1"],
+    ["leg_right_upper_1", "leg_right_upper_2"],
+    ["leg_right_upper_2", "leg_right_upper_3"],
+    ["leg_right_upper_3", "leg_right_knee"],
+    
+    ["leg_right_knee", "leg_right_lower_1"],
+    ["leg_right_lower_1", "leg_right_lower_2"],
+    ["leg_right_lower_2", "leg_right_ankle"],
+    
+    ["leg_right_ankle", "foot_right_heel"],
+    ["foot_right_heel", "foot_right_arch"],
+    ["foot_right_arch", "foot_right_ball"],
+    ["foot_right_ball", "foot_right_toe"],
+    
+    ["hip_left", "leg_left_hip"],
+    ["leg_left_hip", "leg_left_upper_1"],
+    ["leg_left_upper_1", "leg_left_upper_2"],
+    ["leg_left_upper_2", "leg_left_upper_3"],
+    ["leg_left_upper_3", "leg_left_knee"],
+    
+    ["leg_left_knee", "leg_left_lower_1"],
+    ["leg_left_lower_1", "leg_left_lower_2"],
+    ["leg_left_lower_2", "leg_left_ankle"],
+    
+    ["leg_left_ankle", "foot_left_heel"],
+    ["foot_left_heel", "foot_left_arch"],
+    ["foot_left_arch", "foot_left_ball"],
+    ["foot_left_ball", "foot_left_toe"]
+  ],
+  
+  "groups": {
+    "head": {
+      "description": "Head vertices including facial features",
+      "color": "#2ea3ff",
+      "stiffness": 0.8,
+      "fixed": true
+    },
+    "neck": {
+      "description": "Neck region connecting head to torso",
+      "color": "#2ea3ff",
+      "stiffness": 0.7
+    },
+    "shoulder_left": {
+      "description": "Left shoulder joint and surrounding area",
+      "color": "#ff6b6b",
+      "stiffness": 0.6
+    },
+    "shoulder_right": {
+      "description": "Right shoulder joint and surrounding area",
+      "color": "#ff6b6b",
+      "stiffness": 0.6
+    },
+    "clavicle": {
+      "description": "Clavicle bones connecting shoulders",
+      "color": "#ff6b6b",
+      "stiffness": 0.7,
+      "fixed": true
+    },
+    "chest": {
+      "description": "Chest and upper torso",
+      "color": "#4ecdc4",
+      "stiffness": 0.5
+    },
+    "back": {
+      "description": "Back and spine area",
+      "color": "#45b7d1",
+      "stiffness": 0.6
+    },
+    "waist": {
+      "description": "Waist and lower torso",
+      "color": "#96ceb4",
+      "stiffness": 0.5
+    },
+    "hip_left": {
+      "description": "Left hip joint",
+      "color": "#feca57",
+      "stiffness": 0.7,
+      "fixed": true
+    },
+    "hip_right": {
+      "description": "Right hip joint",
+      "color": "#feca57",
+      "stiffness": 0.7,
+      "fixed": true
+    },
+    "hips": {
+      "description": "Hip center and pelvic area",
+      "color": "#feca57",
+      "stiffness": 0.6
+    },
+    "arm_left": {
+      "description": "Left arm vertices",
+      "color": "#ff9ff3",
+      "stiffness": 0.4
+    },
+    "arm_right": {
+      "description": "Right arm vertices",
+      "color": "#ff9ff3",
+      "stiffness": 0.4
+    },
+    "hand_left": {
+      "description": "Left hand vertices",
+      "color": "#54a0ff",
+      "stiffness": 0.3
+    },
+    "hand_right": {
+      "description": "Right hand vertices",
+      "color": "#54a0ff",
+      "stiffness": 0.3
+    },
+    "leg_left": {
+      "description": "Left leg vertices",
+      "color": "#5f27cd",
+      "stiffness": 0.5
+    },
+    "leg_right": {
+      "description": "Right leg vertices",
+      "color": "#5f27cd",
+      "stiffness": 0.5
+    },
+    "foot_left": {
+      "description": "Left foot vertices",
+      "color": "#00d2d3",
+      "stiffness": 0.4
+    },
+    "foot_right": {
+      "description": "Right foot vertices",
+      "color": "#00d2d3",
+      "stiffness": 0.4
+    }
+  },
+  
+  "animation": {
+    "defaultPose": "T-Pose",
+    "rangeOfMotion": {
+      "head": {"x": [-45, 45], "y": [-60, 60], "z": [-30, 30]},
+      "neck": {"x": [-30, 30], "y": [-45, 45], "z": [-20, 20]},
+      "shoulders": {"x": [-90, 90], "y": [-45, 135], "z": [-45, 45]},
+      "elbows": {"x": [0, 150], "y": [-90, 90], "z": [-45, 45]},
+      "wrists": {"x": [-90, 90], "y": [-45, 45], "z": [-30, 30]},
+      "hips": {"x": [-45, 45], "y": [-30, 30], "z": [-20, 20]},
+      "knees": {"x": [0, 135], "y": [-10, 10], "z": [-10, 10]},
+      "ankles": {"x": [-45, 45], "y": [-20, 20], "z": [-30, 30]}
+    },
+    "blendShapes": [
+      "neutral",
+      "happy",
+      "sad",
+      "angry",
+      "surprised",
+      "blink",
+      "mouth_open",
+      "mouth_smile",
+      "mouth_frown"
+    ],
+    "poses": {
+      "t-pose": {
+        "description": "Default T-pose for calibration",
+        "gravityEffect": 0.0
+      },
+      "idle": {
+        "description": "Natural standing pose",
+        "gravityEffect": 1.0
+      },
+      "walking": {
+        "description": "Walking animation pose",
+        "gravityEffect": 0.8
+      }
+    }
+  },
+  
+  "physics": {
+    "gravity": 9.8,
+    "damping": 0.95,
+    "stiffness": 0.15,
+    "groundLevel": -50,
+    "collisionRestitution": 0.7,
+    "massDistribution": {
+      "head": 0.08,
+      "torso": 0.5,
+      "arms": 0.05,
+      "legs": 0.16,
+      "hands": 0.006,
+      "feet": 0.014
+    },
+    "springs": {
+      "muscleTension": 0.3,
+      "tendonElasticity": 0.8,
+      "jointStiffness": 0.7,
+      "defaultStiffness": 0.15
+    },
+    "constraints": {
+      "maxIterations": 3,
+      "tolerance": 0.001
+    }
+  },
+  
+  "rendering": {
+    "lodLevels": [
+      {"distance": 0, "detail": "high", "vertices": "all", "description": "Full detail"},
+      {"distance": 10, "detail": "medium", "vertices": 0.7, "description": "Medium detail (70% vertices)"},
+      {"distance": 20, "detail": "low", "vertices": 0.4, "description": "Low detail (40% vertices)"}
+    ],
+    "shaders": {
+      "wireframe": "glow_3d",
+      "joints": "holographic",
+      "skeleton": "neon_tube",
+      "surface": "phong"
+    },
+    "effects": {
+      "glow": true,
+      "bloom": 0.8,
+      "motionBlur": 0.5,
+      "depthOfField": true,
+      "ambientOcclusion": false,
+      "shadowQuality": "medium"
+    },
+    "defaults": {
+      "wireframeOpacity": 0.8,
+      "glowIntensity": 0.7,
+      "showJoints": true,
+      "showSkeleton": true,
+      "showWireframe": true,
+      "showSurface": false,
+      "colorScheme": "biomechanical"
+    }
+  },
+  
+  "statistics": {
+    "totalVertices": 143,
+    "totalEdges": 151,
+    "totalJoints": 37,
+    "totalGroups": 19,
+    "vertexTypes": {
+      "joint": 37,
+      "surface": 84,
+      "feature": 16,
+      "contour": 6
+    },
+    "dataSize": "~15KB",
+    "compatibility": {
+      "webgl": "2.0",
+      "threejs": "r128",
+      "browsers": ["Chrome 80+", "Firefox 75+", "Safari 14+"]
+    }
+  }
+}

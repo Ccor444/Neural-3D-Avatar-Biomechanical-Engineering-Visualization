@@ -1,0 +1,62 @@
+MIT License
+
+Copyright (c) 2024 Neural Systems Lab
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+Additional Terms for Academic and Research Use:
+
+For academic, research, or educational purposes, we grant additional permissions:
+
+1. Attribution: You must give appropriate credit, provide a link to the license, 
+   and indicate if changes were made. You may do so in any reasonable manner, but 
+   not in any way that suggests the licensor endorses you or your use.
+2. Publication: If you use this software in research that leads to a publication, 
+   please cite the project as:
+   ```
+   Neural 3D Avatar Viewer - Biomechanical Mesh Visualization System. 
+   Neural Systems Lab, 2024. https://github.com/[repository-url]
+   ```
+3. Non-commercial Research: This software may be used for non-commercial 
+   research purposes without additional permissions.
+4. Commercial Use: For commercial applications, please contact the authors 
+   for licensing options.
+5. Medical Disclaimer: This software is intended for research and educational 
+   purposes only. It is NOT intended for medical diagnosis, treatment, or clinical 
+   decision-making. The authors make no warranties regarding the anatomical accuracy 
+   or suitability for any medical application.
+
+---
+
+Third-party Licenses:
+
+This project uses the following third-party libraries:
+
+1. Three.js (r128) - MIT License
+   Copyright © 2010-2021 three.js authors
+2. Stats.js (r17) - MIT License
+   Copyright © 2009-2023 mrdoob
+3. Tween.js (18.6.4) - MIT License
+   Copyright © 2010-2022 tween.js authors
+4. OrbitControls - MIT License
+   Copyright © 2011-2021 three.js authors
+
+All third-party libraries retain their original licenses and copyright notices.
