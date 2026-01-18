@@ -1,10 +1,9 @@
 🧠 Neural 3D Avatar | Biomechanical Engineering & Visualization
 
-https://img.shields.io/badge/version-2.0.0-blue.svg?style=for-the-badge
-https://img.shields.io/badge/Three.js-r128-000000.svg?style=for-the-badge
-https://img.shields.io/badge/Physics-Verlet_Integration-ff69b4.svg?style=for-the-badge
-https://img.shields.io/badge/license-MIT-green.svg?style=for-the-badge
-
+![Version](https://img.shields.io/badge/version-2.0.0-blue.svg?style=for-the-badge)
+![Three.js](https://img.shields.io/badge/Three.js-r128-000000.svg?style=for-the-badge)
+![Physics](https://img.shields.io/badge/Physics-Verlet_Integration-ff69b4.svg?style=for-the-badge)
+![License](https://img.shields.io/badge/license-MIT-green.svg?style=for-the-badge)
 An advanced, high-precision biomechanical mesh visualizer and physics simulator. This project implements a mass-spring system to simulate human tissue behavior, coupled with anatomical joint constraints for medical, robotic, and sports science applications.
 
 ✨ Features
